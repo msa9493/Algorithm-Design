@@ -1,0 +1,27 @@
+def FLCP(listWord):
+    if len(listWord) == 0:
+        return ("Empty list")
+    elif len(listWord) == 1:
+        return listWord[0]
+    n = len(listWord)
+    m = n//2
+    L = listWord[0:m]
+    R = listWord[m:n]
+    
+    X = FLCP(L)
+    Y = FLCP(R)
+    
+    return TwoStrCommon(X, Y)
+
+
+def TwoStrCommon(a, b):
+    result = ""
+    i = j = 0
+    while i < len(a) and j < len(b):
+        if a[i] != b[j]:
+            break
+        
+        result += a[i]
+        i = i+1
+        j = j+1
+    return result
