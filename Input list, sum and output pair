@@ -1,0 +1,18 @@
+Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+
+For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+
+Bonus: Can you do this in one pass?
+
+
+def listNum(list1, n):
+    for i in list1:
+        a = n-i
+        if a in list1:
+            return True
+    return False
+    
+list1 = [0, -1, 2, -3, 1]
+k = -2
+
+listNum(list1, k)
