@@ -1,0 +1,24 @@
+1. By Recursion:
+import time
+
+def FindSol(N):
+    if N <= 1:
+        return 1
+    else:
+        return FindSol(N-1) + FindSol(N-2)
+
+a = time.time()
+print(FindSol(40), time.time() - a)
+
+
+2. Dynamic Programming:
+def FindSolDP(N):
+    M = [0 for i in range(N+1)]
+    M[0] = 1
+    M[1] = 1
+    for i in range(2, N+1):
+        M[i] = M[i-1] + M[i-2]
+    return M[N]
+
+a = time.time()
+print(FindSolDP(40), time.time() - a)
