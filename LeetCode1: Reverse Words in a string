@@ -1,0 +1,16 @@
+Input: s = "the sky is blue" Output: "blue is sky the"
+
+Input: s = " hello world " Output: "world hello" Explanation: Your reversed string should not contain leading or trailing spaces.
+
+
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        s1 = s.split()
+        s2 = ""
+        l, r = 0, len(s1) - 1
+        while (l < r):
+            s1[l], s1[r] = s1[r], s1[l]
+            l +=1
+            r -= 1
+        s2 = " ".join(s1)
+        return(s2)
